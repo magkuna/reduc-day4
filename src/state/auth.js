@@ -32,7 +32,9 @@ export const startListeningToAuthChangesAsyncActionCreator = (
 export const stopListeningUserLoginsLogsAsyncActionCreator = (
     () => (dispatch, getState) => {
         const state = getState()
-        const userId = state.auth.user.uid
+        const userId = state.auth.user.uid && state.auth.user.uid
+        
+        if(!userId) return
 
         database.ref(`users/${userId}/login`).off()
     }
