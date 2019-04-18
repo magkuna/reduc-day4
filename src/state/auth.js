@@ -9,10 +9,7 @@ export const startListeningToAuthChangesAsyncActionCreator = (
         auth.onAuthStateChanged(
             (user) => {
                 if (user) {
-                    console.log(user)
-                    this.setState({ isUserLoggedIn: true })
                 } else {
-                    this.setState({ isUserLoggedIn: false })
                 }
 
                 console.log(user)
@@ -47,10 +44,10 @@ export const passwordChangedActionCreator = newValue => ({
     newValue
 
 })
-export const logInByGoogleAsyncActionCreator = () => (dispatch,getState) => {
+export const logInByGoogleAsyncActionCreator = () => (dispatch, getState) => {
     auth.signInWithPopup(googleProvider)
-    .then(() => console.log ('Zalogowano'))
-    .catch((error) => console.log ('Wystąpił błąd' , error))
+        .then(() => console.log('Zalogowano'))
+        .catch((error) => console.log('Wystąpił błąd', error))
 }
 
 
