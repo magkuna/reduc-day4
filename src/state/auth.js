@@ -50,6 +50,9 @@ export const logInByGoogleAsyncActionCreator = () => (dispatch, getState) => {
         .catch((error) => console.log('Wystąpił błąd', error))
 }
 
+export const logOut = () => (dispatch, getState) => {
+    auth.signOut()
+}
 
 
 const initialState = {

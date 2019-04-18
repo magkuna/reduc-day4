@@ -1,9 +1,9 @@
-import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
 
 
-import auth , { startListeningToAuthChangesAsyncActionCreator} from './state/auth'
+import auth, { startListeningToAuthChangesAsyncActionCreator } from './state/auth'
 
 const rootReducer = combineReducers({
     auth
